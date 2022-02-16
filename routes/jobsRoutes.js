@@ -1,6 +1,6 @@
 const database = require('../DataBase/data')
-const databse = require('../DataBase/data')
-const {getAllJobsSchema} = require('../controllers/schemas/jobposts')
+const {getAllJobsSchema, getSingleJobSchema} = require('../controllers/schemas/jobposts')
+const {getJobHandler, getSingleJob} = require('../controllers/handlers/jobHandlers')
 
 
 getJobsOpts = {
@@ -9,16 +9,10 @@ getJobsOpts = {
 
 const router =  (fastify, options, done) => {
     // get all jobs from database
-    fastify.get('/',getJobsOpts, async (req, reply) => {
-        await reply.send(database)
-    })
+    fastify.get('/',getJobsOpts, getJobHandler )
     
     // get single $$ active job from database with ID
-    fastify.get('/:id', async (req, reply) => {
-
-        let job = database.find(data => data.id === req.params.id)
-        await reply.send(job)
-    })
+    fastify.get('/:id',getSingleJobSchema, getSingleJob)
 
     fastify.post('/add/job', (req, reply) => {
         console.log(req.body)
