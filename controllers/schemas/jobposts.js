@@ -30,4 +30,23 @@ const getSingleJobSchema = {
     },
 };
 
-module.exports = {getAllJobsSchema, getSingleJobSchema}
+const addJobSchema = {
+    body: {
+      type: 'object',
+      required: ['title', 'body'],
+      properties: {
+        id: {type: 'number'},
+        title: {type: 'string'},
+        type: {type: 'string'},
+        date_posted: {type: 'string'},
+        company: {type: 'string'},
+        email: {type: 'string'},
+        description: {type: 'string'},
+    },
+    },
+    response: {
+      200: post, // sending a simple message as string
+    },
+  };
+
+module.exports = {getAllJobsSchema, getSingleJobSchema, addJobSchema}
