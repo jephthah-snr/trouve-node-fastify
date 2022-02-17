@@ -1,6 +1,6 @@
 const fastify = require('fastify')({'logger': true})
 fastify.register(require('./routes/jobsRoutes'))
-
+fastify.register(require('./routes/authentication'))
 
 
 const startServer = async () => {

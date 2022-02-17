@@ -56,7 +56,11 @@ const database = [
 ]
 
 
+const User = [
+
+]
 
 
 
-module.exports = database
+
+module.exports = {database, User}

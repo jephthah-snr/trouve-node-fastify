@@ -3,6 +3,7 @@ const {getAllJobsSchema, getSingleJobSchema, addJobSchema} = require('../control
 const {getJobHandler, getSingleJob, postNewJob} = require('../controllers/handlers/jobHandlers')
 
 
+
 getJobsOpts = {
     schema: getAllJobsSchema
 };
