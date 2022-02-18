@@ -22,7 +22,7 @@ const registerSchema = {
                     firstname: {type: 'string'},
                     lastname: {type: 'string'},
                     password1: {type: 'string'},
-                    password2: {type: 'string'},
+                    // password2: {type: 'string'},
                     email: {type: 'string'},
                 },
             },

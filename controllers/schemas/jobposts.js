@@ -30,6 +30,15 @@ const getSingleJobSchema = {
     },
 };
 
+const searchJobSchema = {
+    params: {
+        id: { type: 'number' },
+      },
+    response: {
+        200: post
+    },
+};
+
 const addJobSchema = {
     body: {
       type: 'object',
@@ -49,4 +58,4 @@ const addJobSchema = {
     },
   };
 
-module.exports = {getAllJobsSchema, getSingleJobSchema, addJobSchema}
+module.exports = {getAllJobsSchema, getSingleJobSchema, addJobSchema, searchJobSchema}

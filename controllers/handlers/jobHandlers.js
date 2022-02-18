@@ -39,4 +39,19 @@ const postNewJob = async (req, reply) => {
 }
 
 
-module.exports = {getJobHandler, getSingleJob, postNewJob}
+const searchHAndler = async (req, res) => {
+
+  var params = req.params.query;
+  var resp = { "streams": [] };
+  if (!params) { res.send('query not found');return; }
+  try {
+ 
+    var label_rules = labelParser(req.query.query);
+    var queries = req.query.query.replace(/\!?=/g,':');
+    var JSON_labels = toJSON(queries);
+  } catch(e){ console.error(e, queries); res.send(resp); }
+
+ };
+
+
+module.exports = {getJobHandler, getSingleJob, postNewJob, searchHAndler}

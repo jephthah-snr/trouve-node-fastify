@@ -60,7 +60,27 @@ const User = [
 
 ]
 
+const registered = [
+    {
+        id: 1,
+        name: 'jephthah',
+        email: 'jsnr300@gmail.com',
+        password: 'test1234'
+    },
+    {
+        id: 2,
+        name: 'meenah',
+        email: 'meenah@gmail.com',
+        password: 'test1234'
+    },
+    {
+        id: 3,
+        name: 'azeez',
+        email: 'jephthah@gmail.com',
+        password: 'test1234'
+    }
+]
 
 
 
-module.exports = {database, User}
+module.exports = {database, User, registered}
